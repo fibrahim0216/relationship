@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/users', 'userController@index');
+Route::get('/users/create', 'userController@create');
+Route::post('/users/create', 'userController@store');
