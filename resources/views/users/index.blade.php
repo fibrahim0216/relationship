@@ -12,15 +12,17 @@
 				<tr>
 					<td>Username</td>
 					<td>Email</td>
-					<td>Phone</td>
+					<td>Action</td>
 				</tr>
 			</thead>
 			<tbody>
+				@foreach($users as $user)
 				<tr class="text-center">
-					<td>ibrahim</td>
-					<td>ibrahim@gmal.com</td>
-					<td>01786930998</td>
+					<td>{{$user->username}}</td>
+					<td>{{$user->email}}</td>
+					<td><a href="/users/{{$user->id}}/profile" title="">Show Profile</a></td>
 				</tr>
+				@endforeach
 			</tbody>
 		</table>
 	</div>

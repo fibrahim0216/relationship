@@ -33,7 +33,22 @@
 				<label>Username</label>
 				<input type="text" name="username" class="form-control">
 			</div>
-			
+
+			<h2>Profile Information</h2>
+
+			<div class="form-group">
+				<label>Profile Pic</label>
+				<input type="text" name="profile_pic" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Bio</label>
+				<input type="text" name="bio" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Address</label>
+				<input type="text" name="address" class="form-control">
+			</div>
+
 			<button type="submit" class="btn btn-success">Submit</button>
 		</form>
 	</div>
