@@ -53,4 +53,49 @@ class userController extends Controller
         return view('users.profile', compact('user'));
     }
 
+    public function edit($id){
+        $user = User::find($id);
+        return view('users.edit', compact('user'));
+    }
+
+    public function update($id){
+        $user = User::find($id);
+
+           /* $firstname = request('firstname');
+            $lastname = request('lastname');
+            $email = request('email');
+            $phone = request('phone');
+            $date_of_birth = request('date_of_birth');
+            $username = request('username');*/
+
+
+       /*$user->update([
+            'firstname'=> $firstname,
+            'lastname'=> $lastname,
+            'email'=> $email,
+            'phone'=> $phone,
+            'date_of_birth'=> $date_of_birth,
+            'username'=> $username
+        ]);*/
+
+       $user->update([
+            'firstname'=> request('firstname'),
+            'lastname'=> request('lastname'),
+            'email'=> request('email'),
+            'phone'=> request('phone'),
+            'username'=> request('username')
+        ]);
+        return redirect('/users');
+    }
+
+
+    /*
+    public function destroy($id){
+        $user = User::find($id);
+        
+        $user->delete();
+        return back();
+    }
+    */
+
 }
