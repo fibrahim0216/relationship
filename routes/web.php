@@ -17,3 +17,4 @@ Route::get('/users', 'userController@index');
 Route::get('/users/create', 'userController@create');
 Route::post('/users/create', 'userController@store');
 Route::get('/users/{id}/profile', 'userController@show');
+Route::get('/profiles', 'profilesController@index');
