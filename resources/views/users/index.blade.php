@@ -7,9 +7,13 @@
 <body>
 	<div class="container">
 		<h2>User List</h2>
+		<div class="text-right">
+			<a class="btn btn-sm btn-success right"href="/users/create" title="">Create</a>
+		</div>
 		<table class="table table-bordered">
 			<thead class="text-center">
 				<tr>
+					<td>Id</td>
 					<td>Username</td>
 					<td>Email</td>
 					<td>Action</td>
@@ -18,9 +22,14 @@
 			<tbody>
 				@foreach($users as $user)
 				<tr class="text-center">
+					<td>{{$user->id}}</td>
 					<td>{{$user->username}}</td>
 					<td>{{$user->email}}</td>
-					<td><a href="/users/{{$user->id}}/profile" title="">Show Profile</a></td>
+					<td>
+						<a class="btn btn-sm btn-success"href="/users/{{$user->id}}/profile" title="">Profile</a>
+						<a class="btn btn-sm btn-primary"href="/users/{{$user->id}}/edit" title="">Edit</a>
+						<a class="btn btn-sm btn-danger"href="" title="">Delete</a>
+					</td>
 				</tr>
 				@endforeach
 			</tbody>

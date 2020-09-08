@@ -33,7 +33,7 @@
 					<td>{{$user->profile->profile_pic}}</td>
 					<td>{{$user->profile->bio}}</td>
 					<td>{{$user->profile->address}}</td>
-					<td><a href="" title="">Edit</a></td>
+					<td><a class="btn btn-sm btn-primary" href="/users/{{$user->id}}/update">Update</a></td>
 				</tr>
 			</tbody>
 		</table>

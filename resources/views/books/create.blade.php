@@ -7,7 +7,7 @@
 <body>
 	<div class="container">
 		<h2>Book Create</h2>
-		<form class="form" action="/authors/create" method="post">
+		<form class="form" action="/books/create" method="post">
 			@csrf
 			<div class="form-group">
 				<label>Name</label>
@@ -19,7 +19,7 @@
 			</div>
 			<div class="form-group">
 				<label>ISBN Number</label>
-				<input type="number" name="isbn" class="form-control">
+				<input type="text" name="isbn" class="form-control">
 			</div>
 
 			<button type="submit" class="btn btn-success">Submit</button>
