@@ -13,15 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/users', 'userController@index');
-Route::get('/users/create', 'userController@create');
-Route::post('/users/create', 'userController@store');
-Route::get('/users/{id}/profile', 'userController@show');
-Route::get('/profiles', 'profilesController@index');
+Route::get('/authors', 'AuthorsController@index');
+Route::get('/authors/create', 'AuthorsController@create');
+Route::post('/authors/create', 'AuthorsController@store');
 
-Route::get('/users/{id}/edit', 'userController@edit');
-Route::patch('/users/{id}/edit', 'userController@update');
-//Route::get('/users/{id}/delete', 'userController@destroy');
-//Route::get('/users/{id}/delete', 'userController@destroy');
+Route::get('/books', 'BooksController@index');
+Route::get('/books/create', 'BooksController@create');
+Route::post('/books/create', 'BooksController@store');
+
 
 
