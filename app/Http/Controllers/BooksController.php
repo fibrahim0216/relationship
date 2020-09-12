@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use App\Author;
 
 class BooksController extends Controller
 {
@@ -26,7 +27,9 @@ class BooksController extends Controller
      */
     public function create()
     {
-        return view('books.create');
+        return view('books.create', [
+            'authors'=> Author::all()
+        ]);
     }
 
     /**
@@ -37,7 +40,13 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        Book::create(request(['name', 'description', 'isbn']));
+
+       $books = Book::create(request(['name', 'description', 'isbn']));
+
+       // dd($request->all());
+        $authors = Author::find(request('authors'));
+        
+        $books->authors()->attach($authors);
 
         return redirect('books');
     }
@@ -61,7 +70,9 @@ class BooksController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book::find($id);
+        $authors = Author::all();
+        return view('books.edit', compact('book', 'authors'));
     }
 
     /**
@@ -73,7 +84,24 @@ class BooksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //Find Existing Book
+       $book = Book::find($id);
+
+        //Find Existing Author
+        $authors = $book->authors;
+
+        //delete all old autors
+        $book->authors()->detach($authors);
+
+        //update book
+        $book->update(request(['name', 'description', 'isbn']));
+
+        //Atach new authors
+        $authors = Author::find(request('authors'));
+        $book->authors()->attach($authors);
+
+        return redirect('/books');
+
     }
 
     /**

@@ -17,6 +17,7 @@
 					<th>Name</th>
 					<th>Description</th>
 					<th>ISBN</th>
+					<th>Author</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -27,7 +28,12 @@
 					<td>{{$book->name}}</td>
 					<td>{{$book->description}}</td>
 					<td>{{$book->isbn}}</td>
-					<td><a class="btn btn-sm btn-success" href="">Update</a></td>
+					<td>
+						@foreach($book->authors as $author)
+							<li>{{$author->name}}</li>
+						@endforeach
+					</td>
+					<td><a class="btn btn-sm btn-success" href="/books/{{$book->id}}/edit">Update</a></td>
 				</tr>
 				@endforeach
 			</tbody>
