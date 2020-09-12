@@ -25,7 +25,7 @@
 					<td>{{$author->id}}</td>
 					<td>{{$author->name}}</td>
 					<td>{{$author->email}}</td>
-					<td><a class="btn btn-sm btn-success" href="">Update</a></td>
+					<td><a class="btn btn-sm btn-success" href="/authors/{{$author->id}}/edit">Update</a></td>
 				</tr>
 				@endforeach
 			</tbody>

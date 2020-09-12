@@ -61,7 +61,9 @@ class AuthorsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('authors.edit', [
+            'author' => Author::find($id)
+        ]);
     }
 
     /**
@@ -73,7 +75,10 @@ class AuthorsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $authors = Author::find($id);
+        $authors->update(request(['name', 'email']));
+
+        return redirect('/authors');
     }
 
     /**
