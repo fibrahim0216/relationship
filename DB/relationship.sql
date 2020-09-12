@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2020 at 01:50 AM
+-- Generation Time: Sep 12, 2020 at 03:22 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -42,8 +42,11 @@ CREATE TABLE `authors` (
 INSERT INTO `authors` (`id`, `name`, `email`, `created_at`, `updated_at`) VALUES
 (1, 'mdibrahim', 'mibrahim0216@gmail.com', '2020-09-09 11:41:45', '2020-09-09 11:41:45'),
 (2, 'Hossain', 'hossain0216@gmail.com', '2020-09-09 11:44:23', '2020-09-09 11:44:23'),
-(3, 'Moniruzzaman', 'miniruzzaman@gmail.com', '2020-09-09 11:46:30', '2020-09-09 11:46:30'),
-(4, 'Indea', 'khaledsaif394@gmail.com', '2020-09-09 11:48:04', '2020-09-09 11:48:04');
+(3, 'Moniruzzaman', 'monir@gmail.com', '2020-09-09 11:46:30', '2020-09-12 07:17:08'),
+(4, 'Indea', 'khaledsaif394@gmail.com', '2020-09-09 11:48:04', '2020-09-09 11:48:04'),
+(5, 'Sagorkhan', 'sagor0216@gmail.com', '2020-09-10 11:47:07', '2020-09-10 11:47:07'),
+(6, 'Bangladesh', 'mdibrahim@gmail.com', '2020-09-12 06:53:30', '2020-09-12 07:16:40'),
+(7, 'Pakisthan', 'fibrahim0216@gmail.com', '2020-09-12 06:53:41', '2020-09-12 06:53:41');
 
 -- --------------------------------------------------------
 
@@ -58,6 +61,22 @@ CREATE TABLE `author_book` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `author_book`
+--
+
+INSERT INTO `author_book` (`id`, `book_id`, `author_id`, `created_at`, `updated_at`) VALUES
+(1, 9, 1, NULL, NULL),
+(5, 11, 1, NULL, NULL),
+(6, 11, 2, NULL, NULL),
+(7, 12, 2, NULL, NULL),
+(16, 13, 1, NULL, NULL),
+(17, 13, 3, NULL, NULL),
+(19, 14, 1, NULL, NULL),
+(20, 10, 1, NULL, NULL),
+(21, 15, 1, NULL, NULL),
+(22, 15, 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -79,11 +98,12 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `name`, `description`, `isbn`, `created_at`, `updated_at`) VALUES
-(1, 'English', 'This is English Book', '123', '2020-09-09 17:08:18', '2020-09-09 17:08:18'),
-(2, 'English', 'This is English Book', '123', '2020-09-09 17:08:33', '2020-09-09 17:08:33'),
-(3, 'Mathmetics', 'Methmethics is the very important subject of CSE', '124', '2020-09-09 17:38:51', '2020-09-09 17:38:51'),
-(4, 'Mathmetics', 'Methmethics is the very important subject of CSE', '1235', '2020-09-09 17:39:56', '2020-09-09 17:39:56'),
-(5, 'Bangla', 'Bangla Subject is the best of Atrs', '12356', '2020-09-09 17:42:59', '2020-09-09 17:42:59');
+(10, 'English', 'This is English Book', '123', '2020-09-11 19:13:04', '2020-09-11 19:13:04'),
+(11, 'Mathmetics', 'Methmethics is the very important subject of CSE', '124', '2020-09-11 19:13:36', '2020-09-11 19:13:36'),
+(12, 'Bangla', 'Bangla Subject is the best of Atrs', '1235', '2020-09-11 19:14:05', '2020-09-11 19:14:05'),
+(13, 'Indea', 'B book is tha e ibes t of indian boook', '123456', '2020-09-11 20:17:39', '2020-09-11 20:17:39'),
+(14, 'alibaboshop', 'vfdghfhfhgf', '1235', '2020-09-11 20:34:44', '2020-09-11 20:34:44'),
+(15, 'Pakisthan', 'gfsgfagafg', '12356', '2020-09-12 06:54:21', '2020-09-12 06:54:21');
 
 -- --------------------------------------------------------
 
@@ -220,19 +240,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `author_book`
 --
 ALTER TABLE `author_book`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `migrations`
